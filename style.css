@@ -6,6 +6,7 @@
     --white: #ffffff;
     --accent-blush: #fbeee6;
     --border-line: #e9dcd3;
+    --serve-bg: #f6e6dd;
 }
 
 * {
@@ -29,7 +30,7 @@ body {
     background: linear-gradient(135deg, #fc987f, #d14825);
     color: var(--white);
     padding: 40px 20px;
-    border-radius: 16px 16px 0 0; /* Rounded top corners */
+    border-radius: 16px 16px 0 0; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
@@ -37,22 +38,31 @@ body {
     font-size: 2.4rem;
     font-weight: 800;
     margin-bottom: 5px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.7px;
 }
 
 #hero h2 {
     font-size: 1.4rem;
     font-weight: 400;
     color: var(--accent-blush);
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #hero div {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    justify-content: space-between;
     padding-top: 15px;
+}
+
+.servings {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#time {
+    margin-top: 20px;
 }
 
 #hero p {
@@ -60,6 +70,15 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+img {
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 230px;
+    top: 35%;
+    left: 42%;
 }
 
 #ingredients, #recipe {
@@ -73,7 +92,7 @@ body {
 }
 
 #recipe {
-    border-radius: 0 0 16px 16px; /* Rounded bottom corners */
+    border-radius: 0 0 16px 16px;
     border-bottom: 1px solid var(--border-line);
     margin-bottom: 50px;
 }
@@ -120,13 +139,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-.step h2 {
-    /* Styles the specific "How to Serve" sub-heading */
-    font-size: 1.3rem;
-    color: var(--chili-red);
-    margin-bottom: 10px;
-}
-
 .step p {
     margin-bottom: 8px;
     font-size: 1rem;
@@ -134,7 +146,28 @@ h2 {
     padding-left: 15px;
 }
 
-/* --- 6. Mobile Responsiveness --- */
+.serve {
+    background: var(--serve-bg);
+    padding: 40px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-line);
+}
+
+.serve p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+.serve h2 {
+    font-size: 1.5rem;
+    color: var(--chili-red);
+    margin-bottom: 15px;
+}
+
+
 @media (max-width: 650px) {
     body {
         padding: 10px;
@@ -148,13 +181,12 @@ h2 {
         border: 1px solid var(--border-line);
     }
 
-    #hero h1 {
-        font-size: 1.8rem;
+    img {
+        display: none;
     }
 
-    #hero div {
-        flex-direction: column;
-        gap: 5px;
+    #hero h1 {
+        font-size: 1.8rem;
     }
 
     #ingredients ul {
